@@ -147,24 +147,10 @@ for classifier_index in range(NUM_CLASSIFIERS):
     X_values = X_values_temp
     prediction_values = prediction_values_temp
 
-print("Tha accuracy of the custom implementation is : {}".format(accuracy_score(np.round(sigmoid(prediction_values)), y_values)))
+print("The accuracy of the custom implementation is : {}".format(accuracy_score(np.round(sigmoid(prediction_values)), y_values)))
 
 
 # Vanilla sklearn algorithm
 classifier = GradientBoostingClassifier(n_estimators=NUM_CLASSIFIERS, max_depth=MAX_DEPTH)
 classifier.fit(np.array(X_train), np.array(y_train))
-print("Tha accuracy of the sklearn implementation is : {}".format(accuracy_score(classifier.predict(X_train), y_train)))
-
-
-# # Vanilla sklearn algorithm - This is the very same as the above (cross checking whether X_values and y_values are
-# # consistent
-# from sklearn.ensemble import GradientBoostingClassifier
-# from sklearn.metrics import accuracy_score
-# classifier = GradientBoostingClassifier(n_estimators=NUM_CLASSIFIERS, max_depth=MAX_DEPTH)
-# classifier.fit(np.array(X_values), np.array(y_values))
-# print("Tha accuracy of the sklearn implementation is : {}".format(accuracy_score(classifier.predict(X_values), y_values)))
-
-#######################################################################################################
-# Comparisons on the test set
-
-
+print("The accuracy of the sklearn implementation is : {}".format(accuracy_score(classifier.predict(X_train), y_train)))
