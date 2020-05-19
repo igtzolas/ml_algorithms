@@ -35,4 +35,4 @@ print("Custom Implementation : Accuracy score for testing data : {}".format(accu
 classifier = GradientBoostingClassifier(n_estimators=NUM_CLASSIFIERS, max_depth=MAX_DEPTH)
 classifier.fit(np.array(X_train), np.array(y_train))
 print("Vanilla Implementation : Accuracy score for training data : {}".format(accuracy_score(classifier.predict(X_train), y_train)))
-print("Vanilla Implementation : Accuracy score for training data : {}".format(accuracy_score(classifier.predict(X_test), y_test)))
+print("Vanilla Implementation : Accuracy score for testing data : {}".format(accuracy_score(classifier.predict(X_test), y_test)))
